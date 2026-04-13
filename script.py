@@ -1,35 +1,43 @@
 import pandas as pd
-import matplotlib.pyplot a plt
+
+import matplotlib.pyplot as plt
+
 #==============================
 #Leitura dos dados
 #==============================
-dados+ pd.read_csv('dados/dados.csv')
+dados = pd.read_csv('dados/dados.csv')
 
 #==============================
-#VIsualização incial
+#Visualização inicial
 #==============================
-
-print(dados.head(10)
+print(dados.head(10))
 
 #==============================
-#Histograma
+# Histograma
 #==============================
 dados['nota'].hist(bins=5)
-      plt.xlabel('notas')
-      plt.ylabel('quantidade')
-      plt.savefix('histo.png')
-      olt.clf() #limpa o gráfico antes do proximo
+plt.title('Distribuição das Notas')
+plt.xlabel('Notas')
+plt.ylabel('Quantidade')
+plt.savefig('histo.png')
+plt.clf() # limpa o gráfico antes do próximo
+
 #==============================
-#Boxplot
+# Boxplot
 #==============================
 
-      dados.boxplot.(column=['nota'])
-      plt.title('Boxplot das notas')
-      plt.savefig('boxplot.png')
-      plt.clf()
+dados.boxplot(column=['nota'])
+
+plt.title('Boxplot das Notas')
+
+plt.savefig('boxplot.png')
+
+plt.clf()
+
 #==============================
-#Estatisticas
+# Estatísticas
 #==============================
-print("média idade:", dados['idade'].mean())
-      print("mediana:".dados['nota'].median())
-      print("desvio padrão:", dados{'nota].std())'
+
+print("Média idade:", dados['idade'].mean())
+print("Mediana:", dados['nota'].median())
+print("Desvio padrão:", dados['nota'].std())
